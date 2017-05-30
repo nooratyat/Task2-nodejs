@@ -4,7 +4,7 @@ var s3 = require('s3');
 
 require('./config/middleware.js')(app, express);
 
-app.use('/', express.static('../client'));
+app.use(express.static(__dirname + '/../../client'));
 
 app.get('/audio', function(req, res) {  
    var params = {
@@ -15,19 +15,19 @@ app.get('/audio', function(req, res) {
 	
 	
 
-// var client = s3.createClient({  
-//   s3Options: {
-//     accessKeyId: 'AKIAIOSFODNN7EXAMPLE',
-//     secretAccessKey:' wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY'
-//   }
-// });
+var client = s3.createClient({  
+  s3Options: {
+    accessKeyId: 'AKIAICM7D3TQOUAI6SLQ',
+    secretAccessKey:'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'
+  }
+});
 
 
 
-// var downloadStream = client.downloadStream(params = {
-//     Bucket: 'New-Bucket-1020',
-//     Key: 'test.mp3'
-//   })
+var downloadStream = client.downloadStream( params = {
+    Bucket: 'New-Bucket-1020',
+    Key: 'test.mp3'
+  })
 
   // downloadStream.on('error', function() {
   //   res.status(404).send('Not Found');
