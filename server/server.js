@@ -3,9 +3,7 @@ var app = express();
 var router = express.Router();
  var s3 = require('s3');
 var multer = require('multer');
-var upload = multer({
-  dest: "tmp/" 
-});
+var upload = multer({ dest: "tmp/" });
 var fs = require('fs');
 var AWS = require('aws-sdk');
 
@@ -16,7 +14,7 @@ var AWS = require('aws-sdk');
 //   }
 // });
 require('./config/middleware.js')(app, express);
-app.use(express.static(__dirname + '/../../client'));
+app.use(express.static(__dirname + './../client'));
 
 var client = s3.createClient({  
   s3Options: {

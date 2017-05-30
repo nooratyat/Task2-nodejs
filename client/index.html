@@ -1,12 +1,70 @@
-<!DOCTYPE html>  
-<html>  
-<head>  
-    <title>S3 Audio</title>
-</head>  
-<body>  
-    <button onclick="playTunes()">Play</button>
-    <button onclick="downloadTunes()">download</button>
-    
-    <script>  </script>
-</body>  
-</html>  
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="bootstrap.min.css" type="text/css">
+	<title> Express Music Server </title>
+	<style>
+		body {
+		
+			padding: 30px;
+			text-align: center;
+		}
+		.contents{
+			background: #fff;
+			padding: 20px;
+			margin: auto;
+			opacity: 0.7;
+			text-align: center;
+		}
+		.contents button{
+			width: 100px;
+			opacity: 0.9;
+			background: #000;
+		}
+		h1 {
+			color: #333333;
+			font-size: 60px;
+		}
+		h2 {
+			color: #2e2e2e;
+			font-size: 28px;
+		}
+		a {
+			color: #2f2f2f;
+			font-size: 18px
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="container contents">
+	<h1>   Musical </h1>
+	
+	<hr>
+	
+	
+	
+		<div class="row">
+			<div class="col-md-4">
+				<img class="img img-responsive" src="song.png"/>
+				<h2> play.mp3 </h2>
+				
+				<a href="http://localhost:8000/music?id=hello.mp3" target="_blank"> <button class="btn btn-success"> Play </button>	</a> <hr>
+				
+			</div>
+			<div class="col-md-4">
+			<img class="img img-responsive" src="song.png"/>
+				<h2> Download.mp3 </h2>
+				
+				<a href="http://localhost:8000/download?id=divine.mp3"  target="_blank"> <button class="btn btn-success"> Downnload </button> </a>
+			</div>
+			
+		</div>
+	</div>
+	
+</body>
+</html>
+
+
+
+
