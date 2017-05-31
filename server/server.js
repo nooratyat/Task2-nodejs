@@ -30,8 +30,8 @@ app.post("/files/upload", upload.single("form-field-name"), function (req, res) 
   var fileInfo = console.log(req.file);
   var fileStream = fs.readFileSync(fileInfo.path);
   var options = {
-    Bucket: 'xxx',
-    Key: 'yyy/'+fileName,
+    Bucket: 'myy',
+    Key: fileName,
     Body: fileStream
   };
 
@@ -52,8 +52,8 @@ app.get("/files/download/:name", function (req, res) {
     return res.status(400).end("missing file name");
   }
   var options = {
-    Bucket: 'xxx',
-    Key: 'yyy/'+fileName
+    Bucket: 'myy',
+    Key: fileName
   };
   res.attachment(fileName);
   s3.getObject(options).createReadStream().pipe(res);
